@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ti Amo Bubi ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #ff4d6d, #ff758c);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+}
+
+.message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    width: 90%;
+}
+
+.floating {
+    position: absolute;
+    font-size: 24px;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="message">
+🌹 Buon San Valentino Bubi 🌹 <br><br>
+Sei il mio cuore, il mio sorriso,<br>
+la mia felicità quotidiana 💕<br><br>
+Ti amo infinitamente ❤️
+</div>
+
+<script>
+function createElement(symbol) {
+    const el = document.createElement("div");
+    el.classList.add("floating");
+    el.innerHTML = symbol;
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.fontSize = Math.random() * 30 + 20 + "px";
+    el.style.animationDuration = Math.random() * 3 + 3 + "s";
+    document.body.appendChild(el);
+
+    setTimeout(() => {
+        el.remove();
+    }, 6000);
+}
+
+setInterval(() => createElement("❤️"), 300);
+setInterval(() => createElement("🌸"), 500);
+setInterval(() => createElement("🌹"), 700);
+</script>
+
+</body>
+</html>

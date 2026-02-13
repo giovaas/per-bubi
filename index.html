@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Per Bubi 💘</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    color: white;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+input {
+    padding: 12px;
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#enterBtn {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+#yesBtn {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+#noBtn {
+    background-color: white;
+    color: #ff4d6d;
+}
+
+.hidden {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="passwordBox">
+    <h1>🔐 Area Segreta per Bubi 💖</h1>
+    <p>Inserisci la password per entrare</p>
+    <input type="password" id="passwordInput" placeholder="Password">
+    <br>
+    <button id="enterBtn" onclick="checkPassword()">Entra 💌</button>
+</div>
+
+<div class="container hidden" id="mainBox">
+    <h1>💖 Bubi… vuoi essere la mia Valentina? 💖</h1>
+    <button id="yesBtn" onclick="yesClicked()">Sì 💕</button>
+    <button id="noBtn" onclick="noClicked()">No 🙈</button>
+</div>
+
+<script>
+let yesSize = 18;
+
+function checkPassword() {
+    const password = document.getElementById("passwordInput").value;
+    if(password === "giovitiama") {
+        document.getElementById("passwordBox").classList.add("hidden");
+        document.getElementById("mainBox").classList.remove("hidden");
+    } else {
+        alert("Password sbagliata Bubi 😜");
+    }
+}
+
+function noClicked() {
+    yesSize += 12;
+    document.getElementById("yesBtn").style.fontSize = yesSize + "px";
+}
+
+function yesClicked() {
+    window.location.href = "love.html";
+}
+</script>
+
+</body>
+</html>
